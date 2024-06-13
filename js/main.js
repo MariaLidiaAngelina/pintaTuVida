@@ -27,7 +27,7 @@ function despedirseNombre(){
     alert('Muchas gracias por elegirnos!!!')
 }
 //Variables declaradas
-let nombre;
+
 let opcion;
 let colores = ' '
 let precio = 0;
@@ -68,19 +68,19 @@ while (opcion !== 4) {
             switch (colores) {
                 case "blanco":
                     precio = 2000
-                    alert("2000 el litro");
+                    alert("2000 el litro" + ' en total te sale '+ parseInt(precio*cantidad));
                     break;
                 case "verde":
                     precio = 2500
-                    alert("2500 el litro");
+                    alert("2500 el litro" + ' en total te sale '+ parseInt(precio*cantidad));
                     break;
                 case "naranja":
                     precio = 2400
-                    alert("2400 el litro");
+                    alert("2400 el litro" + ' en total te sale '+ parseInt(precio*cantidad));
                     break;
                 case "rosa":
                     precio = 2700
-                    alert("2700 el litro");
+                    alert("2700 el litro" + ' en total te sale '+ parseInt(precio*cantidad));
                     break;
                 default:
                     alert("Solo tenemos naranja, verde, blanco, rosa");
