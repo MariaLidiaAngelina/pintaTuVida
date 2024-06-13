@@ -11,6 +11,11 @@ function calcularPintura() {
 
         let ancho = parseFloat(prompt("Ingresa los metros de ancho de tu pared"));
         let alto = parseFloat(prompt("Ingresa los metros de alto de tu pared"));
+        while (isNaN(ancho) || isNaN(alto)) {
+            alert('Debes ingresar un valor en números');
+            ancho = parseFloat(prompt("Ingresa los metros de ancho de tu pared"));
+            alto = parseFloat(prompt("Ingresa los metros de alto de tu pared"));
+                  }
         let superficie = (ancho * alto);
         let pintura = superficie / 12;
 
@@ -20,13 +25,13 @@ function calcularPintura() {
         total += pintura;
     };
 
-    alert(" Necesitas un total de " + total + " litros de pintura por mano")
+    alert(" Necesitas un total de " + total + " litros de pintura POR MANO")
 }
 
-function despedirseNombre(){
+function despedirseNombre() {
     alert('Muchas gracias por elegirnos!!!')
 }
-//Variables declaradas
+//Variables globales
 
 let opcion;
 let colores = ' '
@@ -40,7 +45,7 @@ let cantidadTotal = 0;
 //Codigo
 saludarConNombre()
 
-opcion = parseInt(prompt('¿ Por dónde quieres empezar? \n 1- Calcular la pintura que necesitas (4 paredes) \n 2- Elegir entre colores disponibles \n 3 -Comprar productos \n- 4- Terminar '))
+opcion = parseInt(prompt('¿ Por dónde quieres empezar? \n 1- Calcular la pintura que necesitas ( hasta 4 paredes) \n 2- Elegir entre colores disponibles \n 3 -Comprar productos \n- 4- Terminar '))
 while (isNaN(opcion) || opcion <= 0 || opcion > 4) {
     alert('Debes seleccionar una opción válida!');
     opcion = parseInt(prompt('¿ Por dónde quieres empezar? \n 1- Calcular la pintura que necesitas (4 paredes) \n 2- Elegir entre colores disponibles \n 3 -Comprar productos \n- 4- Terminar '));
@@ -49,8 +54,9 @@ while (isNaN(opcion) || opcion <= 0 || opcion > 4) {
 while (opcion !== 4) {
     if (opcion === 1) {
         calcularPintura();
-      break
-    }
+        break;
+    
+            }
     if (opcion === 2 || opcion === 3) {
 
         do {
@@ -68,19 +74,19 @@ while (opcion !== 4) {
             switch (colores) {
                 case "blanco":
                     precio = 2000
-                    alert("2000 el litro" + ' en total te sale '+ parseInt(precio*cantidad));
+                    alert("2000 el litro" + ' en total te sale ' + parseInt(precio * cantidad));
                     break;
                 case "verde":
                     precio = 2500
-                    alert("2500 el litro" + ' en total te sale '+ parseInt(precio*cantidad));
+                    alert("2500 el litro" + ' en total te sale ' + parseInt(precio * cantidad));
                     break;
                 case "naranja":
                     precio = 2400
-                    alert("2400 el litro" + ' en total te sale '+ parseInt(precio*cantidad));
+                    alert("2400 el litro" + ' en total te sale ' + parseInt(precio * cantidad));
                     break;
                 case "rosa":
                     precio = 2700
-                    alert("2700 el litro" + ' en total te sale '+ parseInt(precio*cantidad));
+                    alert("2700 el litro" + ' en total te sale ' + parseInt(precio * cantidad));
                     break;
                 default:
                     alert("Solo tenemos naranja, verde, blanco, rosa");
@@ -95,8 +101,10 @@ while (opcion !== 4) {
         } while (seguirComprando);
 
         alert('Compraste ' + cantidadTotal + ' litros de pintura y el precio final es de $' + precioTotal);
-         opcion = 4;
+        opcion = 4;
     }
 }
-opcion===4;   despedirseNombre();
 
+opcion === 4;
+    despedirseNombre();
+     
